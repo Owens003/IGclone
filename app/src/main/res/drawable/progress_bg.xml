@@ -24,7 +24,7 @@
             of the shape-->
         <gradient
             android:angle="0"
-            android:startColor="@color/green_light25"
+            android:startColor="#f36880"
             android:type="sweep"
             android:useLevel="false" />
     </shape>

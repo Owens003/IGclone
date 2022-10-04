@@ -1,40 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        tools:src="@tools:sample/avatars" />
 
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivProfile"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="1dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="ojpmathurin" />
 
+    <ImageButton
+        android:id="@+id/btnEditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-12dp"
+        android:layout_marginTop="65dp"
+        android:layout_toEndOf="@id/ivProfile"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_edit" />
 
-    <RelativeLayout
+    <Button
+        android:id="@+id/btnLogout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvposts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvUsername"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/back"
+        android:backgroundTint="@color/gray"
+        android:text="logout" />
 
-            android:padding="8dp" />
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/btnLogout"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="?android:attr/listDivider" />
 
-        <Button
-            android:id="@+id/btnSignout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rvposts"
-            android:layout_marginTop="150dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="10dp"
-            android:text="Logout"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/purple_500"
-            app:elevation="5dp" />
-
-    </RelativeLayout>
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider1"
+        android:layout_marginTop="5dp"
+        android:numColumns ="2"
+        android:stretchMode ="columnWidth" />
 
 
-</FrameLayout>
+</RelativeLayout>
